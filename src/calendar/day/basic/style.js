@@ -1,20 +1,32 @@
-import {StyleSheet, Platform} from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import * as defaultStyle from '../../../style';
 
-export default function styleConstructor(theme={}) {
-  const appStyle = {...defaultStyle, ...theme};
+export default function styleConstructor(theme = {}) {
+  const appStyle = { ...defaultStyle, ...theme };
   return StyleSheet.create({
     base: {
-      width: 32,
-      height: 32,
+      width: 30,
+      height: 30,
       alignItems: 'center'
+    },
+    base1: {
+      width: 35,
+      height: 35,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    base2: {
+      width: 39,
+      height: 39,
+      alignItems: 'center',
+      justifyContent: 'center'
     },
     text: {
       marginTop: 4,
       fontSize: appStyle.textDayFontSize,
       fontFamily: appStyle.textDayFontFamily,
       fontWeight: '300',
-      color: appStyle.dayTextColor,
+      color: appStyle.foregroundColor,
       backgroundColor: 'rgba(255, 255, 255, 0)'
     },
     alignedText: {
@@ -24,11 +36,25 @@ export default function styleConstructor(theme={}) {
       backgroundColor: appStyle.selectedDayBackgroundColor,
       borderRadius: 16
     },
+    selected1: {
+      borderColor: appStyle.selectedDayBackgroundColor,
+      borderRadius: 18,
+      backgroundColor: 'transparent',
+      borderWidth: 1
+    },
+    selected2: {
+      borderColor: '#c5c5c5',
+      borderRadius: 20,
+      backgroundColor: 'transparent',
+      borderWidth: 1
+    },
     todayText: {
-      color: appStyle.todayTextColor
+      color: '#fff',
+      fontWeight: 'bold'
     },
     selectedText: {
-      color: appStyle.selectedDayTextColor
+      color: appStyle.selectedDayTextColor,
+      fontWeight: 'bold'
     },
     disabledText: {
       color: appStyle.textDisabledColor

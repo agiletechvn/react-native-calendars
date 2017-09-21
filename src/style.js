@@ -1,4 +1,4 @@
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
 export const foregroundColor = '#ffffff';
 export const backgroundColor = '#f4f4f4';
@@ -23,11 +23,11 @@ export const textDayHeaderFontSize = 13;
 
 export const calendarBackground = foregroundColor;
 export const textSectionTitleColor = '#b6c1cd';
-export const selectedDayBackgroundColor = textLinkColor;
-export const selectedDayTextColor = foregroundColor;
+export const selectedDayBackgroundColor = foregroundColor;
+export const selectedDayTextColor = textSecondaryColor;
 export const todayTextColor = textLinkColor;
 export const dayTextColor = textDefaultColor;
-export const textDisabledColor = '#d9e1e8';
+export const textDisabledColor = '#c5c5c5';
 export const dotColor = textLinkColor;
 export const selectedDotColor = foregroundColor;
 export const arrowColor = textLinkColor;

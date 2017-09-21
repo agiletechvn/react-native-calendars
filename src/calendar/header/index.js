@@ -59,9 +59,9 @@ class CalendarHeader extends Component {
           {this.props.renderArrow
             ? this.props.renderArrow('left')
             : <Image
-                source={require('../img/previous.png')}
-                style={this.style.arrowImage}
-              />}
+              source={require('../img/previous.png')}
+              style={this.style.arrowImage}
+            />}
         </TouchableOpacity>
       );
       rightArrow = (
@@ -69,9 +69,9 @@ class CalendarHeader extends Component {
           {this.props.renderArrow
             ? this.props.renderArrow('right')
             : <Image
-                source={require('../img/next.png')}
-                style={this.style.arrowImage}
-              />}
+              source={require('../img/next.png')}
+              style={this.style.arrowImage}
+            />}
         </TouchableOpacity>
       );
     }
@@ -83,19 +83,13 @@ class CalendarHeader extends Component {
       <View>
         <View style={this.style.header}>
           {leftArrow}
-          <View style={{ flexDirection: 'row' }}>
-            <Text style={this.style.monthText}>
-              {this.props.month.toString(this.props.monthFormat ? this.props.monthFormat : 'MMMM yyyy')}
-            </Text>
-            {indicator}
-          </View>
           {rightArrow}
         </View>
         {
           !this.props.hideDayNames &&
           <View style={this.style.week}>
             {weekDaysNames.map((day, idx) => (
-              <Text key={idx} style={this.style.dayHeader} numberOfLines={1}>{day}</Text>
+              <Text key={idx} style={this.style.dayHeader}>{day}</Text>
             ))}
           </View>
         }

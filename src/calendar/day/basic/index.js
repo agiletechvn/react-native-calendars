@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   TouchableOpacity,
   Text,
@@ -42,6 +42,8 @@ class Day extends Component {
 
   render() {
     const containerStyle = [this.style.base];
+    const containerStyle1 = [this.style.base1];
+    const containerStyle2 = [this.style.base2];
     const textStyle = [this.style.text];
     const dotStyle = [this.style.dot];
 
@@ -54,13 +56,15 @@ class Day extends Component {
     let dot;
     if (marked.marked) {
       dotStyle.push(this.style.visibleDot);
-      dot = (<View style={dotStyle}/>);
+      dot = (<View style={dotStyle} />);
     } else if (!this.props.markingExists) {
       textStyle.push(this.style.alignedText);
     }
 
     if (this.props.state === 'selected' || marked.selected) {
       containerStyle.push(this.style.selected);
+      containerStyle1.push(this.style.selected1);
+      containerStyle2.push(this.style.selected2);
       dotStyle.push(this.style.selectedDot);
       textStyle.push(this.style.selectedText);
     } else if (this.props.state === 'disabled' || marked.disabled) {
@@ -69,10 +73,14 @@ class Day extends Component {
       textStyle.push(this.style.todayText);
     }
     return (
-      <TouchableOpacity style={containerStyle} onPress={this.onDayPress}>
-        <Text style={textStyle}>{String(this.props.children)}</Text>
-        {dot}
-      </TouchableOpacity>
+      <View style={containerStyle2}>
+        <View style={containerStyle1}>
+          <TouchableOpacity style={containerStyle} onPress={this.onDayPress}>
+            <Text style={textStyle}>{String(this.props.children)}</Text>
+            {dot}
+          </TouchableOpacity>
+        </View>
+      </View>
     );
   }
 }

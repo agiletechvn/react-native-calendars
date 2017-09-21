@@ -1,8 +1,8 @@
-import {StyleSheet, Platform} from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import * as defaultStyle from '../../style';
 
-export default function(theme={}) {
-  const appStyle = {...defaultStyle, ...theme};
+export default function (theme = {}) {
+  const appStyle = { ...defaultStyle, ...theme };
   return StyleSheet.create({
     header: {
       flexDirection: 'row',
@@ -32,9 +32,14 @@ export default function(theme={}) {
       })
     },
     week: {
-      marginTop: 7,
       flexDirection: 'row',
-      justifyContent: 'space-around'
+      justifyContent: 'space-around',
+      borderTopWidth: 0.5,
+      borderTopColor: '#D2D2D2',
+      borderBottomWidth: 0.5,
+      borderBottomColor: '#D2D2D2',
+      alignItems: 'center',
+      paddingVertical: 5, paddingTop: 7
     },
     dayHeader: {
       marginTop: 2,
@@ -43,7 +48,8 @@ export default function(theme={}) {
       textAlign: 'center',
       fontSize: appStyle.textDayHeaderFontSize,
       fontFamily: appStyle.textDayHeaderFontFamily,
-      color: appStyle.textSectionTitleColor
+      color: appStyle.textSectionTitleColor,
+
     }
   });
 }
